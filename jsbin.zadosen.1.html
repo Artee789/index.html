@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2024 by Artee789 (http://jsbin.com/zadosen/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>별이 빛나는 밤</title>
+  <style>
+    body {
+      background-color: #000; /* 밤하늘 배경색 */
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 1s infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 별 생성 함수
+    function createStar(x, y) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = x + 'px';
+      star.style.top = y + 'px';
+      document.body.appendChild(star);
+    }
+
+    // 밤하늘에 별 생성
+    for (let i = 0; i < 100; i++) {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      createStar(x, y);
+    }
+  </script>
+</body>
+</html>
